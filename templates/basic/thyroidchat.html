@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thyroid chat</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}images/logo.jpg">
+    <script>
+        setInterval(() => {
+            if (document.title == 'Thyroid chat'){
+                document.title = 'Thyroid'
+        } else{
+            document.title = 'Thyroid chat';
+        }
+
+        }, 1000);
+    </script>
+        <!-- ChatBot -->
+    
+        <!-- Interactive chat plugin -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.convform.css' %}">
+    
+        <!-- Jquery Library for chatbot -->
+        <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.convform.js' %}"></script>
+    
+        <!-- For reading Chatbot -->
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    
+    </head>
+<body>
+
+	<!-- ChatBot -->
+	<div class="chat_icon">
+		<i class="fa fa-comments" aria-hidden="true"></i>
+	</div>
+	<div class="conntainer d-flex justify-content-center align-items-center vw-100 vh-100">
+	<div class="chat_box active">
+		<div class="my-conv-form-wrapper">
+			<form action="" method="GET" class="hidden">
+
+				<select data-conv-question="How is my thyroid functioning?<br>Self-check in 3 mins"
+					name="category">
+
+					<option value="Start">Start</option>
+
+				</select>
+
+				<select
+					data-conv-question="It's nice to meet you! 🙂  <br> <b>Please let me know how old you are. </b>">
+					<option value="age">less than 21 years</option>
+					<option value="age">21 to 49 years</option>
+					<option value="age">50 to 64 years </option>
+                    <option value="age">Above 65 years </option>
+
+					
+
+				</select>
+
+				<select data-conv-question="And you are...">
+					<option value="gender">Male</option>
+					<option value="gender">Female</option>
+                    <option value="gender">Other</option>
+				</select>
+
+                <input type="text" data-conv-question="Let's dive in.. 😊 " data-no-answer="true">
+
+				<select data-conv-question="<b>Tell me, what brings you here?</b>" multiple>
+					<option value="Weight Gain">Weight Gain</option>
+					<option value="Tiredness">Tiredness</option>
+					<option value="Constipation">Constipation</option>
+                    <option value="Growth & development issues">Growth & development issues</option>
+					<option value="I don't have these symptoms">I don't have these symptoms</option>
+				</select>
+
+                <input type="text" data-conv-question="An underactive thyroid can cause weight gain. Making lifestyle changes helps! 🎯 " data-no-answer="true">
+
+				
+				
+
+				<select data-conv-question="<b>Since when have you noticed weight gain?</b>">
+
+					<option value="">Less than 3 months</option>
+					<option value="">3-6 months</option>
+					<option value="">6-11 months</option>
+					<option value="">More than 1 year</option>
+				</select>
+				
+				<select data-conv-question="<b>Tell me, how many kilos have you gained over last year? </b><br>Take a shot.">
+                    <option value="">Less than 5 kgs</option>
+					<option value="">6-10 kgs</option>
+                    <option value="">11-20 kgs</option>
+					<option value="">More than 21 kgs</option>		
+				</select>
+
+                <input type="text" data-conv-question=" It's okay. You can lose it gradually over time.  📅 " data-no-answer="true">			
+
+				<select data-conv-question="<b>I eat less but I keep gaining weight.</b><br> Do you relate to this statement">
+					<option value="">Yes</option>
+					<option value="">No</option>	
+				</select>
+
+
+				<input type="text"
+					data-conv-question=" I can understand. That feels awful. 🙁"
+					data-no-answer="true">
+
+                    <input type="text"
+					data-conv-question="Did you know? 🌗 Thinning of hair on the scalp, caused by hypothyroidism, is manageable."
+					data-no-answer="true">
+				<select data-conv-question="<b>What kind of issues are you facing with your hair?</b><br>Select options that apply to you.">
+					<option value="">Hair loss</option>
+					<option value="">Hair Thinning</option>
+                    <option value="">Coarse/brittle hair</option>
+					<option value="">Other hair issues</option>
+				</select>
+
+                <input type="text" data-conv-question="Hey, don't worry! It can be corrected with treatments." data-no-answer="true">
+	
+				<select data-conv-question="<b>How long have you been facing these issues?</b>">
+
+					<option value="">Less than 3 months</option>
+					<option value="">3-6 months</option>
+					<option value="">6-11 months</option>
+                    <option value="">More than a year</option>
+
+				
+				</select>
+
+                <input type="text" data-conv-question="
+                Hang in there! ✋ " data-no-answer="true">
+
+                
+                <input type="text" data-conv-question="Hypothyroidism usually leads to slowing down of bodily activities. Eg: Your bowel movements. 🚽 " data-no-answer="true">
+
+                <select data-conv-question="<b>Since when have you noticed a disruption in bowel movements?</b>">
+					<option value="">Less than 3 months</option>
+					<option value="">3-6 months</option>
+                    <option value="">6-11 months</option>	
+                    <option value="">Over a year</option>
+				</select>
+ 
+                <select data-conv-question="<b>Can you tell me how far apart are your bowel movements?</b>" >
+					<option value="">Daily</option>
+					<option value="">2-3 days apart</option>
+                    <option value=""> >3 days apart</option>
+					
+				</select>
+
+                <input type="text"
+                data-conv-question=" I am sorry to hear that!"
+                data-no-answer="true">
+                    <select data-conv-question="<b>Do you feel relieved after having medication?</b>">
+                        <option value="">Yes</option>    
+                        <option value="">No</option>  
+                        <option value="">I don't take medication</option>   
+                          
+                    </select>
+
+                    <input type="text"
+                    data-conv-question="I hope you feel better soon!🙂 "
+                    data-no-answer="true">
+
+                    <input type="text"
+                    data-conv-question="Fluctuating thyroid hormone can affect the growth & development of your body. 💪"
+                    data-no-answer="true">
+
+                    <select data-conv-question="<b>Have you experienced the following? Select options that apply to you.</b>" multiple>
+                        <option value="Shorter height than your peers">Shorter height than your peers</option>    
+                        <option value="Gaining excessive weight">Gaining excessive weight</option>   
+                        <option value="Delayed puberty">Delayed puberty</option>    
+                        <option value="Poor performance in school">Poor performance in school</option> 
+                        <option value="Delayed tooth development">Delayed tooth development</option>    
+                        <option value="Other issues">Other issues</option> 
+                         
+                    </select>
+                    <input type="text"
+                    data-conv-question="Things can still improve! Take a look into the signs you're experiencing ASAP."
+                    data-no-answer="true">
+                    <select data-conv-question="<b>Do you face any of these signs?</b> <br> Select the ones that apply to you."multiple>
+                        <option value="Feeling Cold Often">Feeling Cold Often</option>    
+                        <option value="observed Swelling (face/feet)">observed Swelling (face/feet)</option>   
+                        <option value="Voice Hoarseness">Voice Hoarseness</option>   
+                        <option value="Forgetful/confused">Forgetful/confused</option>    
+                        <option value="Swelling in Throat">Swelling in Throat</option>   
+                        <option value="None of the above">None of the above</option> 
+                    </select>
+
+                    <input type="text" data-conv-question="TSH serum (thyroid-stimulating hormone) is analysed from blood samples collected for the initial screening of thyroid disorders. " data-no-answer="true">
+
+                    <select data-conv-question="<b> Have you checked for TSH and T4 levels?</b>">
+                        <option value="">Yes</option>    
+                        <option value="">No</option>   
+                         
+                    </select>
+                    
+                    <input type="text"
+                    data-conv-question="Don't be alarmed! We'll figure it out."
+                    data-no-answer="true">
+
+                    <input type="text"
+                    data-conv-question="Moving On..."
+                    data-no-answer="true">
+
+                    <select data-conv-question="<b>Tell me a little about your lifestyle.</b><br>Select the ones that apply to you." multiple>
+                        <option value="Stress">Stress</option>    
+                        <option value="Regular Exercise">Regular Exercise</option>   
+                        <option value="Over eating">Over eating </option>   
+                        <option value="Disturbed sleep pattern">Disturbed sleep pattern</option>  
+                        <option value="None of the above">None of the above</option>    
+  
+                    </select>
+
+
+                    <select data-conv-question="<b>Do you know that some conditions increase your risk of hypothyroidism?<br>Please let us know if any of these apply to you." multiple>
+                        <option value="Family history of thyroid issu...</">Family history of thyroid issu...</option>    
+                        <option value="Past thyroid surgeries">Past thyroid surgeries</option>   
+                        <option value="I've had radiation therapies">I've had radiation therapies</option>   
+                        <option value="None of the above">None of the above</option>   
+
+                         
+                    </select>
+
+                    <input type="text"
+                    data-conv-question="Sometimes you can feel overwhelmed!👩‍⚕️Availing medical assistance helps.! "
+                    data-no-answer="true">
+
+                    <select data-conv-question="<b>Before you go, have you been diagnosed with chronic conditions? </b> <br> Select the ones that apply to you." multiple>
+                        <option value="Diabetes">Diabetes</option>      
+                        <option value="Obesity">Obesity</option>    
+                        <option value="Heart Disease">Heart Disease</option>    
+                        <option value="High cholesterol">High cholesterol</option>    
+                        <option value="No chronic conditions">No chronic conditions</option>                    
+                    </select>
+
+                    <input type="text" data-conv-question="We're done!" data-no-answer="true">
+                    <input type="text" data-conv-question="Hey, I appreciate you for letting me in on this.." data-no-answer="true">
+
+                    <select data-conv-question="Let me recap all your responses. <br>
+
+                    You did well! Contact a doctor if you find some symptoms to be troublesome. 👨‍⚕️" >
+                        <option value="">Submit</option>                    
+                    </select>          
+				</div>
+				</div>
+				
+
+               
+
+<script type="text/javascript">
+		portfolioList = document.querySelectorAll('.portfolio-box');
+		portfolioList.forEach(function (portfolioPic) {
+			portfolioPic.addEventListener('click', function () {
+				bg = this.style.backgroundImage;
+				document.getElementById('port_pop_pic_bg').classList.add("active")
+				document.getElementById('port_pop_pic').style.backgroundImage = bg
+				document.getElementById('port_pop_pic').classList.add("active")
+			});
+		})
+		document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+		})
+	</script>
+
+</body>
+
+</html>

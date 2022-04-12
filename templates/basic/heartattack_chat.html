@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart Attack chat</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}images/logo.jpg">
+    <script>
+        setInterval(() => {
+            if (document.title == 'Heart Attack chat'){
+                document.title = 'Heart Attack'
+        } else{
+            document.title = 'Heart Attack chat';
+        }
+
+        }, 1000);
+    </script>
+        <!-- ChatBot -->
+    
+        <!-- Interactive chat plugin -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.convform.css' %}">
+    
+        <!-- Jquery Library for chatbot -->
+        <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.convform.js' %}"></script>
+    
+        <!-- For reading Chatbot -->
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    
+    </head>
+<body>
+
+    
+
+	<!-- ChatBot -->
+	<div class="chat_icon">
+		<i class="fa fa-comments" aria-hidden="true"></i>
+	</div>
+
+    <div class="conntainer d-flex justify-content-center align-items-center vw-100 vh-100">
+
+	<div class="chat_box active">
+		<div class="my-conv-form-wrapper">
+			<form action="" method="GET" class="hidden">
+
+				<select data-conv-question="How is your heart health?<br>Self-check in 3 mins"
+					name="category">
+
+					<option value="Start">Start</option>
+
+				</select>
+
+				<select
+					data-conv-question="It's nice to meet you! 🙂  <br> <b>Please let me know how old you are. </b>">
+					<option value="age">20 years & less</option>
+					<option value="age">21 to 30 years</option>
+					<option value="age">31 to 40 years </option>
+					<option value="age">41 to 50 years</option>
+                    <option value="age">51 to 60 years</option>
+					<option value="age">Above 60 years</option>
+
+				</select>
+
+				<select data-conv-question="And you are...">
+					<option value="gender">Male</option>
+					<option value="gender">Female</option>
+                    <option value="gender">Other</option>
+				</select>
+
+				<select data-conv-question="<b>Do you relate with any of these symptoms?</b>" multiple>
+					<option value="Pounding heart beat at rest">Pounding heart beat at rest</option>
+					<option value="Episodes of giddiness/fainting">Episodes of giddiness/fainting</option>
+					<option value="Breathlessness while walking">Breathlessness while walking</option>
+					<option value="Chest Pain">Chest Pain</option>
+					<option value="None of the above">None of the above</option>
+				</select>
+
+				
+				
+
+				<select data-conv-question="<b>As you are experiencing a 'pounding heartbeat' even at rest, what was your recorded heart rate?</b>">
+
+					<option value="">Below 80</option>
+					<option value="">80-100</option>
+					<option value="">101-140</option>
+					<option value="">Above 140</option>
+				</select>
+				
+                <input type="text"
+                data-conv-question="Adults with high cholesterol levels seem to be at a higher risk of developing cardiac issues."
+                data-no-answer="true">
+
+				<select data-conv-question="<b>Have you had your cholesterol level tested recently?</b>">
+                    <option value="">Yes</option>
+					<option value="">No</option>		
+				</select>
+
+			
+
+				<select data-conv-question="<b>Did your report mention any of these abnormalities? </b><br>Select applicable options." multiple>
+					<option value="High LDL">High LDL</option>
+					<option value="Low HDL">Low HDL</option>
+					<option value="High Total cholesterol">High Total cholesterol</option>
+                    <option value="High Triglycerides">High Triglycerides</option>
+                    <option value="cholesterol levels controlled with medication">cholesterol levels controlled with medication</option>
+                    <option value="None of the above">None of the above</option>
+				</select>
+
+
+				<input type="text"
+					data-conv-question=" Thanks for letting me know. 🙂"
+					data-no-answer="true">
+				<select data-conv-question="<b>Do you have high blood pressure?</b> <br> (Note: More than 130/90mmHg is considered high blood pressure)">
+					<option value="">Yes, I have high BP</option>
+					<option value="">No, I've always had normal BP</option>
+                    <option value="">I have low BP</option>
+					<option value="">I don't Know</option>
+				</select>
+
+                <input type="text"
+					data-conv-question=" Have you heard? You might be at a higher risk of getting a heart attack if you smoke. 🚬"
+					data-no-answer="true">
+
+
+				
+				<select data-conv-question="<b>Do you smoke or are constantly exposed to passive smoke for the last 12 months?</b>">
+
+					<option value="">Yes</option>
+					<option value="">No</option>
+					<option value="">More than 1 year since I quit</option>
+				
+				</select>
+
+                <select data-conv-question="<b>Have you smoked 100 or more cigarettes in your lifetime?  </b>">
+					<option value="">Yes</option>
+					<option value="">No</option>
+					
+				</select>
+
+                <input type="text"
+                data-conv-question="Choosing to quit smoking will be a huge step towards living a healthy life. It may feel difficult at first but, with consistency, you'll overcome it."
+                data-no-answer="true">
+
+
+
+                <select data-conv-question="<b>
+                    Do you drink alcohol?
+                    </b>">
+					<option value="">Occasionally</option>
+					<option value="">Everyday(>2 drinks/day)</option>            
+					<option value="">I don't drink</option>
+				</select>
+
+                <select data-conv-question="<b>Have you experienced any of the following conditions?</b>" multiple>
+					<option value="Heart attack">Heart attack</option>
+					<option value="Stroke">Stroke</option>
+                    <option value="None of the above">None of the above</option>
+					
+				</select>
+
+                <input type="text"
+                data-conv-question=" I am sorry to hear that!"
+                data-no-answer="true">
+                    <select data-conv-question="<b>Has anyone in your family (parents, siblings, children) 
+
+                        experienced the following diseases or procedures?</b>">
+                        <option value="">Heart attack</option>    
+                        <option value="">Stroke</option>   
+                        <option value="">Angioplasty/Stent placement</option>   
+                        <option value="">None of the above</option>    
+                    </select>
+
+                    <input type="text"
+                    data-conv-question="I understand how difficult that can be."
+                    data-no-answer="true">
+                    <select data-conv-question="<b>Do you have diabetes?</b>">
+                        <option value="">Yes</option>    
+                        <option value="">No</option>   
+                         
+                    </select>
+                    <input type="text"
+                    data-conv-question="Thanks for sharing that."
+                    data-no-answer="true">
+                    <select data-conv-question="<b>Have you ever had any of the following cardiac tests?  </b>"multiple>
+                        <option value="ECG">ECG</option>    
+                        <option value="Echocardiogram(Echo)">Echocardiogram(Echo)</option>   
+                        <option value="Labs(Troponin l/Troponin T)">Labs(Troponin l/Troponin T)</option>   
+                        <option value="None of the above">None of the above</option>    
+                    </select>
+
+                    <select data-conv-question="<b> Were these tests found to be normal?</b>">
+                        <option value="">Yes</option>    
+                        <option value="">No</option>   
+                         
+                    </select>
+                    
+                    <input type="text"
+                    data-conv-question="Do you know? Individuals who exercise have a lower risk of heart disease than those who don't."
+                    data-no-answer="true">
+
+                    <select data-conv-question="<b>Which one of the following statements best describes your usual activity?</b>">
+                        <option value="">20-30mins/day high intensity</option>    
+                        <option value="">30-40mins/day mild intensity</option>   
+                        <option value="">I workout only few days/week</option>   
+                        <option value="">I don't workout</option>    
+                    </select>
+
+                    <input type="text"
+                    data-conv-question="Good job!🌟 "
+                    data-no-answer="true">
+
+                    <select data-conv-question="<b>How many servings of red meat do you eat per month?<br>
+
+                        (Eg: mutton, steak, ham, bacon, sausage, etc.) </b> <br>1 serving size: 90 gms or the size of a deck of cards.">
+                        <option value="">10 or more servings</option>    
+                        <option value="">1 to 9 servings</option>   
+                        <option value="">I don't eat red meat</option>   
+                         
+                    </select>
+
+                    <input type="text"
+                    data-conv-question="All done! "
+                    data-no-answer="true">
+
+                    <select data-conv-question="Let me gather your responses! <br>
+
+                        Remember, your lifestyle plays a major role in keeping your heart healthy. Make informed choices.🙂 <br>
+                        
+                        Please click on submit .">
+                        <option value="">Submit</option>                      
+                    </select>
+
+
+                    
+				</div>
+				</div>
+				
+            </div>
+                 <!-- Chatbot End -->
+
+
+
+
+	<script type="text/javascript">
+		portfolioList = document.querySelectorAll('.portfolio-box');
+		portfolioList.forEach(function (portfolioPic) {
+			portfolioPic.addEventListener('click', function () {
+				bg = this.style.backgroundImage;
+				document.getElementById('port_pop_pic_bg').classList.add("active")
+				document.getElementById('port_pop_pic').style.backgroundImage = bg
+				document.getElementById('port_pop_pic').classList.add("active")
+			});
+		})
+		document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+		})
+	</script>
+
+</body>
+
+</html>

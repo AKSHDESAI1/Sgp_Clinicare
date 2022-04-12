@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diabetes chat</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}images/logo.jpg">
+    <script>
+        setInterval(() => {
+            if (document.title == 'Diabetes chat'){
+                document.title = 'Diabetes'
+        } else{
+            document.title = 'Diabetes chat';
+        }
+
+        }, 1000);
+    </script>
+        <!-- ChatBot -->
+    
+        <!-- Interactive chat plugin -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.convform.css' %}">
+    
+        <!-- Jquery Library for chatbot -->
+        <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.convform.js' %}"></script>
+    
+        <!-- For reading Chatbot -->
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    
+    </head>
+
+<body>
+
+	<!-- ChatBot -->
+
+	<div class="chat_icon">
+		<i class="fa fa-comments" aria-hidden="true"></i>
+	</div>
+
+    <div class="conntainer d-flex justify-content-center align-items-center vw-100 vh-100">
+	<div class="chat_box active">
+		<div class="my-conv-form-wrapper">
+			<form action="" method="GET" class="hidden">
+
+				<select data-conv-question="Hello! there <br> Am I at risk of Diabetes? <br>Self-check in 3 mins"
+					name="category">
+
+					<option value="Start">Start</option>
+
+				</select>
+
+				<select
+					data-conv-question="Before we begin, I would like to know about you. <br> <b>How old are you?</b>">
+
+					<option value="age">20 years and less</option>
+					<option value="age">21 to 30 years</option>
+					<option value="age">31 to 40 years </option>
+					<option value="age">41 to 50 years</option>
+					<option value="age">51 years and above</option>
+
+				</select>
+
+				<select data-conv-question="And you are...">
+					<option value="gender">Male</option>
+					<option value="gender">Female</option>
+				</select>
+
+
+				<input type="text" data-conv-question="A blood sugar test is the first step to diagnose if someone has developed diabetes. 💉" data-no-answer="true">
+
+				<select data-conv-question="So, before we proceed... <br>
+
+                <b> Have you ever been found to have high blood sugar either from a blood test or during a visit to the doctor?.
+
+	  Since how long have you been experiencing headaches? </b>">
+
+					<option>Yes</option>
+					<option>No</option>
+					
+
+				</select>
+
+				
+				<input type="text" data-conv-question="Did you hear? Diabetes can be prevented and high sugars can be reversed with proper treatment. " data-no-answer="true">
+
+				<select  data-conv-question="<b>Did your report point out any of these as abnormalities?</b>" multiple>
+
+					<option value="HbA1c">HbA1c</option>
+					<option value="Blood sugars">Blood sugars</option>
+					<option value="Urine sugar +ve">Urine sugar +ve</option>
+					<option value="I don't remember">I don't remember</option>
+				</select>
+				
+					
+					 <input type="text" data-conv-question="okay..." data-no-answer="true"> 
+						<select data-conv-question="<b>How much was your last measured HBA1c?</b>" >
+
+							<option value="">HbA1c>=9%</option>
+							<option value="">HbA1c6.5% to 9%</option>
+							<option value="">HbA1c 5.9%-6.4%</option>
+							<option value="">Less than 5.9% HbA1c</option>
+                            <option value=" ">I don't remember</option>
+
+						</select>	
+
+            <input type="text" data-conv-question="It's time to pay attention to your HBA1c score." data-no-answer="true"> 
+				<select data-conv-question="<b>Can you tell me your last measured fasting blood sugar?</b>">
+
+					<option value="">FBS less than 100 mg/dl </option>
+					<option value="">FBS 100-120 mg/dl </option>
+					<option value="">FBS >= 120 mg/dl</option>
+					<option value="">I don't remember</option>
+				</select>
+
+				<input type="text"
+					data-conv-question="Oh! You can improve your levels with treatment.   "
+					data-no-answer="true">
+
+				<select data-conv-question="<b>How much was your last recorded PPBS (sugar levels post food intake)? </b>">
+					<option value="">PPBS less than 140 mg/dl</option>
+					<option value="">PPBS 140-199 mg/dl</option>
+					<option value="">PPBS >= 200 mg/dl</option>
+                    <option value="">I don't remember</option>
+
+				</select> 
+
+
+				<input type="text"
+					data-conv-question="Hey, hang in there! ✋ With proper care, it'll get better.  "
+					data-no-answer="true">
+				<select name="dia" data-conv-question="<b>As you said your blood sugars were found to be high,<br>
+
+                    have you been diagnosed with..</b>">
+
+					<option value="dia1">Pre-diabetes</option>
+					<option value="dia2">Diabetes</option>
+					<option value="dia3">None of the above</option>
+					
+				</select>
+
+                <div data-conv-fork="dia">
+                    <div data-conv-case="dia1">
+                        <select name="part1" data-conv-question="<b>Have you experienced the following?</b><br>Select options that apply to you." multiple>
+                            <option value="Frequent urination">Frequent urination</option>
+							<option value="Consistently thirsty">Consistently thirsty</option>
+							<option value="Frequently hungry">Frequently hungry</option>
+							<option value="None of the above">None of the above </option>
+                        </select>
+                    </div>
+                </div>
+                <div data-conv-case="dia2">
+                    <input type="text"
+					data-conv-question="Untreated diabetes is the leading cause of foot ulcers, renal disease, preventable blindness, heart diaseases and stroke."
+					data-no-answer="true">
+                    <select data-conv-question="<b>Did you observe or diagnosed with any of these?</b>" multiple>
+                        <option value="Foot ulcers">Foot ulcers</option>
+                        <option value="Blurred/Diminished vision">Blurred/Diminished vision</option>
+                        <option value="Kidney issues ">Kidney issues </option>
+                        <option value="Heart related issues">Heart related issues</option>
+                        <option value="None of the above">None of the above</option>
+                    </select>
+                </div>
+                <div data-conv-case="dia3">
+                    <select data-conv-question="<b>Have you experienced the following?</b><br>Select options that apply to you.">
+                        <option value="">Frequent urination</option>
+                        <option value="">Consistently thirsty</option>
+                        <option value="">Frequently hungry</option>
+                        <option value="">None of the above </option>
+                    </select>
+                </div>
+
+
+				<select data-conv-question="<b>Do you experience excessive tiredness along with the above-selected symptoms?👆 </b>">
+					<option value="">Yes</option>
+					<option value="">No</option>
+				</select>
+
+				<input type="text" data-conv-question="While a symptom alone can seem harmless, it's best to look into it if it persists for a long time." data-no-answer="true">
+				<select data-conv-question="<b>Do you generally...  </b> " multiple>
+					<option value="Skip meals often">Skip meals often</option>
+					<option value="Eat sugary/fatty junk food">Eat sugary/fatty junk food</option>
+					<option value="Consume high carbohygrate diet">Consume high carbohygrate diet</option>
+					<option value="Eat healthy/Follow a meal plan">Eat healthy/Follow a meal plan</option>
+				</select>
+
+				<input type="text" data-conv-question="I feel you need to get your diet in order. 
+
+				You can do it! 🥙 " data-no-answer="true">
+				<select data-conv-question="<b>Say, how would you describe yourself? </b>"">
+					<option value="">I am underweight</option>
+					<option value="">I am at a healthy weight</option>
+					<option value="">I am a bit overweight</option>
+					<option value="">I am obese</option>
+
+
+				</select>
+
+				<input type="text" data-conv-question="Exercise helps you maintain healthy blood glucose levels by boosting your sensitivity to insulin. 🏃‍♂️" data-no-answer="true">
+				
+				<select data-conv-question="<b>Do you set aside time for exercise?</b>">
+					<option value="">No</option>
+					<option value="">Rerely</option>
+					<option value="">Weekends</option>
+					<option value="">Weekdays</option>
+					<option value="">Daily</option>
+					
+				</select>
+
+				<select data-conv-question="<b>Tell me a little about your lifestyle.</b>" multiple>
+					<option value="Stress">Stress</option>
+					<option value="Drinking alcohol">Drinking alcohol</option>
+					<option value="Cigarette smoking">Cigarette smoking</option>
+					<option value="Irregular sleep patterns">Irregular sleep patterns</option>
+					<option value="None of the above">None of the above</option>
+				</select>
+
+				<input type="text" data-conv-question="Thanks for that information. " data-no-answer="true">
+			
+				<select data-conv-question="<b>Have you been diagnosed with any of these conditions? </b>" multiple>
+					<option value="cholesterol">cholesterol</option>
+					<option value="High blood pressure">High blood pressure</option>
+					<option value="Thyroid disorders">Thyroid disorders</option>
+					<option value="None of the above">None of the above</option>
+				</select>
+				<input type="text" data-conv-question="And... we're done. " data-no-answer="true">
+			
+				<select data-conv-question="Let me collate all your responses and prepare the report.
+
+				Don't be overwhelmed! Diabetes is manageable with proper medication & lifestyle changes. 🙂 ">
+					<option value="">Submit</option>
+					</select>
+				</div>
+				</div>
+					
+			
+	
+
+	<script type="text/javascript">
+		portfolioList = document.querySelectorAll('.portfolio-box');
+		portfolioList.forEach(function (portfolioPic) {
+			portfolioPic.addEventListener('click', function () {
+				bg = this.style.backgroundImage;
+				document.getElementById('port_pop_pic_bg').classList.add("active")
+				document.getElementById('port_pop_pic').style.backgroundImage = bg
+				document.getElementById('port_pop_pic').classList.add("active")
+			});
+		})
+		document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+		})
+	</script>
+
+</body>
+
+</html>

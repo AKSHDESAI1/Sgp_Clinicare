@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}images/logo.jpg">>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-family: "Playfair Display", serif;
+        background-color: #ffffff;
+        /* background-image: linear-gradient(43deg, #ffffff 40%, #569dee 80%, #b6b6b6 100%); */
+        display: grid;
+        align-content: center;
+        text-align: center;
+        min-height: 108vh;
+      }
+
+      section {
+        display: grid;
+        background-color: #ffffff;
+        justify-content: center;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: 160px;
+        height: 80vh;
+        width: 85vw;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
+          0 6px 20px 0 rgba(128, 128, 128, 0.19);
+        border-radius: 50px;
+      }
+
+      .description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .description h1 {
+        justify-content: center;
+      }
+
+      .description p {
+        font-family: "Century Gothic", sans-serif;
+        text-align: center;
+      }
+      .description h1 {
+        font-size: 34px;
+      }
+
+      .content {
+        background-color: #161d33;
+        display: flex;
+        min-height: 40vh;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+      }
+
+      .content h2 {
+        padding-top: 5px;
+        text-transform: uppercase;
+        font-size: 36px;
+        letter-spacing: 4px;
+        opacity: 0.9;
+      }
+
+      .content span {
+        height: 0.5px;
+        width: 80px;
+        background: #777;
+        margin: 20px 0;
+      }
+
+      .content p {
+        font-weight: 300;
+        opacity: 0.7;
+        width: 50%;
+        text-align: center;
+        margin: 0px 0 10px 0;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        color: #ffffff;
+      }
+
+      .links {
+        margin: 15px 0;
+      }
+
+      .links li {
+        list-style: none;
+        border-radius: 5px;
+        margin: 10px;
+        width: 200px;
+        text-align: center;
+        display: contents;
+      }
+
+      .links li a {
+        letter-spacing: 2px;
+        padding: 15px;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .links li a:hover {
+        border-color: #ddd30f;
+        cursor: pointer;
+      }
+
+      .icons {
+        display: flex;
+        padding: 15px 0;
+      }
+
+      .icons li {
+        display: block;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .icons li i {
+        font-size: 26px;
+        opacity: 0.8;
+      }
+
+      .icons li i:hover {
+        color: #e6d116;
+        cursor: pointer;
+      }
+
+      /*****************/
+
+      @media (max-width: 900px) {
+        section {
+          grid-template-columns: 1fr;
+          width: 100%;
+          border-radius: none;
+        }
+
+        .image {
+          height: 100vh;
+          border-radius: none;
+        }
+
+        .content {
+          height: 100vh;
+          border-radius: none;
+        }
+
+        .content h2 {
+          font-size: 20px;
+          margin-top: 50px;
+        }
+
+        .content span {
+          margin: 20px 0;
+        }
+
+        .content p {
+          font-size: 14px;
+        }
+
+        .links li a {
+          font-size: 14px;
+        }
+
+        .links {
+          margin: 5px 0;
+        }
+
+        .links li {
+          padding: 6px 10px;
+        }
+
+        .icons li i {
+          font-size: 15px;
+        }
+      }
+
+      .credit {
+        text-align: center;
+        color: #000;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      .credit a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/dbed6b6114.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <section>
+      <div class="description">
+        <h1>Clinicare</h1>
+        <br />
+        <p>
+          The Clinicare is an upkeep healthcare system that brings you one step
+          closer to identifying your illness and prescribes appropriate medicine
+          for the ailment at any time and anywhere. It also benefits you by
+          providing the facility of booking online/physical appointments with
+          your preferred doctor.
+        </p>
+      </div>
+
+      <div class="Info"></div>
+    </section>
+    <div class="content">
+      <h2>About Us</h2>
+      <span>
+        <!-- line here -->
+      </span>
+      <p>
+        This is the About Us Page of our website where you can find the
+        information about our Developers Team, FAQ and a way to reach us with
+        your querries and issues.
+      </p>
+      <ul class="links">
+        <li><a href="#">Developers Team</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <i class="fa fa-twitter"></i>
+        </li>
+        <li>
+          <i class="fa fa-facebook"></i>
+        </li>
+        <li>
+          <i class="fa fa-github"></i>
+        </li>
+        <li>
+          <i class="fa fa-pinterest"></i>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

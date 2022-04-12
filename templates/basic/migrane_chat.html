@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Migrane Chat</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+	{% load static %}
+    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}images/logo.jpg">
+	<script>
+        setInterval(() => {
+            if (document.title == 'Migrane chat'){
+                document.title = 'Migrane'
+        } else{
+            document.title = 'Migrane chat';
+        }
+
+        }, 1000);
+    </script>
+	<!-- ChatBot -->
+
+	<!-- Interactive chat plugin -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.convform.css' %}">
+
+	<!-- Jquery Library for chatbot -->
+	<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.convform.js' %}"></script>
+
+	<!-- For reading Chatbot -->
+	<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+</head>
+
+<body>
+
+	<!-- ChatBot -->
+
+	<div class="chat_icon ">
+		<i class="fa fa-comments" aria-hidden="true"></i>
+	</div>
+<div class="conntainer d-flex justify-content-center align-items-center vw-100 vh-100">
+
+	<div class="chat_box active ">
+		<div class="my-conv-form-wrapper">
+			<form  class="hidden">
+
+				<select data-conv-question="Hello! there <br> Are your headache migraine? <br>Self-check in 3 mins"
+					name="category">
+
+					<option value="Start">Start</option>
+
+				</select>
+
+				<select
+					data-conv-question="Before we begin, I would like to know about you. <br> <b>How old are you?</b>">
+
+					<option value="age">20 years and less</option>
+					<option value="age">21 to 30 years</option>
+					<option value="age">31 to 40 years </option>
+					<option value="age">41 to 50 years</option>
+					<option value="age">51 years and above</option>
+
+				</select>
+
+				<select data-conv-question="And you are...">
+					<option value="gender">Male</option>
+					<option value="gender">Female</option>
+				</select>
+
+
+				<input type="text" data-conv-question="Thank you for letting me know. 😊" data-no-answer="true">
+
+				<select data-conv-question="Now, I am going to ask you a bit about your headaches.<br> <b>
+
+	  Since how long have you been experiencing headaches? </b>">
+
+					<option value="issue">Rarely</option>
+					<option value="issue">Less than a month</option>
+					<option value="issue">2-6 months</option>
+					<option value="issue"> >6 months to a year</option>
+					<option value="issue"> Over 1 year</option>
+
+				</select>
+
+				
+				<input type="text" data-conv-question="Okay..got it. " data-no-answer="true">
+
+				<select name="ex1" data-conv-question="<b>On which part do you experience the headache?</b>">
+
+					<option value="Hpart1">One side of my head</option>
+					
+					<option value="Hpart2">Both sides of my head</option>
+					<option value="Hpart3">I feel it all over the head </option>
+					<option value="Hpart4">Varies with each episode </option>
+				</select>
+				<div data-conv-fork="ex1">
+					<div data-conv-case="Hpart1">
+					
+						<input type="text" data-conv-question="I see...okay. " data-no-answer="true">
+						<select data-conv-question="The exact area where you experience the headache is important to determine the condition.<br><b>
+							Where exactly do you feel the headache?</b> " multiple>
+
+							<option value="Right/Left eye region">Right/Left eye region</option>
+							
+							<option value="Right/Left temple">Right/Left temple</option>
+							<option value="Right/Left back of head">Right/Left back of head</option>
+							<option value="None of the above">None of the above</option>
+						</select>
+					</div>
+					<div data-conv-case="Hpart2">
+						<input type="text" data-conv-question="I see...okay. " data-no-answer="true">
+						<select name="ex3" data-conv-question="The exact area where you experience the headache is important to determine the condition.<br><b>
+								Where exactly do you feel the headache?</b> " multiple>
+
+							<option value="Behind both my eyes">Behind both my eyes</option>
+							<option value="At Both my temples">At Both my temples</option>
+							<option value="Above both my eyebrows">Above both my eyebrows</option>
+							<option value="At the back of my head on both...">At the back of my head on both...</option>
+							<option value="None of these">None of these</option>
+
+						</select>
+					</div>
+					<div data-conv-case="Hpart3">
+						<input type="text" data-conv-question="I see...okay. " data-no-answer="true">
+					</div>
+					<div data-conv-case="Hpart4">
+						<input type="text" data-conv-question="Got it ,thank you. " data-no-answer="true">
+					</div>
+				</div>
+
+
+
+				<select data-conv-question="<b>What do you feel when you experience these headaches?</b>">
+
+					<option value="">Pulsating or a hammering pain</option>
+					<option value="">An ache/pressure</option>
+					<option value="">A tight band like feeling </option>
+					<option value="">A dull pain</option>
+					<option value="">Varies with each episode</option>
+					<option value="">None of these</option>
+
+				</select>
+
+				<input type="text"
+					data-conv-question="Thank you for letting me know.👍<br> A few more questions to understand how intense your headaches are. "
+					data-no-answer="true">
+
+				<select data-conv-question="<b>On an average, how many headaches do you experience per month?</b>">
+					<option value="">Less than 2</option>
+					<option value="">2-4</option>
+					<option value="">Greater than 4</option>
+				</select>
+
+
+				<input type="text"
+					data-conv-question="Okay...This information is extremely useful in understanding severity of your <br> headaches. Thank you.🙂 "
+					data-no-answer="true">
+				<select data-conv-question="<b>How long does your headaches usually last?</b>">
+
+					<option value="">Less than 6 hours</option>
+					<option value="">Half a day</option>
+					<option value="">Whole day</option>
+					<option value="">For few days</option>
+					<option value="">More than a week</option>
+					<option value="">It varies from time to time</option>
+				</select>
+
+
+				<input type="text" data-conv-question="Okay...got it...<br>
+
+		        Headaches may affect how we function on a daily basis." data-no-answer="true">
+
+				<select data-conv-question="<b>Does your headache affect your day-to-day life?</b>">
+
+					<option value="">No,it doesn't affect me at all</option>
+					<option value="">Somewhat,but I can still go about my life</option>
+					<option value="">Somewhat,but I take medications</option>
+					<option value="">Severely,but I manage with medications</option>
+					<option value="">Severely.I need rest even with medication</option>
+				</select>
+
+
+				<!--PENDING WORK -->
+
+
+
+				<input type="text"
+					data-conv-question="Some people experience associated symptoms (aura) such as <b>vomiting, numbness, seeing colored lights, disturbed sleep, etc.</b> before the headache begins."
+					data-no-answer="true">
+
+
+
+				<select name="vm"
+					data-conv-question="<b>Have you experienced any such symptoms before the headache starts?</b>">
+					<option type="Vomiting,nausea,diarrhea...etc">Vomiting,nausea,diarrhea...etc</option>
+					<option type="Weakness ,dizziness,numbers...etc.">Weakness ,dizziness,numbers...etc.</option>
+					<option type="Blurry vision ,sensitivity to light...etc.">Blurry vision ,sensitivity to light...etc.
+					</option>
+					<option type="Others">Others</option>
+					<option type="None of the above">None of the above</option>
+				</select>
+
+				<div data-conv-fork="vm">
+					<div data-conv-case="Vomiting,nausea,diarrhea...etc">
+						<select data-conv-question="Certain factors like <b>stress, gastritis, bright lights, loud noise, alcoholism etc.</b> can worsen headaches.<br><br><br>
+								<b>Are there any such factors that worsen your headaches?</b>">
+							<option type="">Yes</option>
+							<option type="">No</option>
+							<option type="">Not sure</option>
+						</select>
+					</div>
+
+					<div data-conv-case="Weakness ,dizziness,numbers...etc.">
+						<input type="text" data-conv-question="I want to understand more about this."
+							data-no-answer="true">
+						<select
+							data-conv-question="<b>Do you feel any of the following  before your migraine starts?</b>"
+							multiple>
+							<option type="">Numbness / tingling sensation</option>
+							<option type="">Speech difficulty</option>
+							<option type="">Feeling lightheaded</option>
+							<option type="">Weakness of legs </option>
+							<option type="">Weakness of arms</option>
+							<option type="">None of the above</option>
+						</select>
+
+
+					</div>
+
+					<div data-conv-case="Blurry vision ,sensitivity to light...etc.">
+						<input type="text" data-conv-question="I want to understand more about this."
+							data-no-answer="true">
+						<select data-conv-question="<b>Have you experienced any of these problems?</b>">
+							<option type="">Blurred / double vision</option>
+							<option type="">Sparkling , flashing or colore... </option>
+							<option type="">Puffy/drooping eyelids</option>
+							<option type="">Loss of vision</option>
+							<option type="">None of the above</option>
+						</select>
+
+					</div>
+
+					<div data-conv-case="Others">
+						<input type="text" data-conv-question="I want to understand more about this."
+							data-no-answer="true">
+						<select data-conv-question="<b>Do you observe any of the following during your headaches?</b>">
+							<option type="">Runny nose</option>
+							<option type="">Disturbed by light</option>
+							<option type="">Disturbed by noise</option>
+							<option type="">Difficulty concentrating</option>
+							<option type="">Unable to sleep at night</option>
+							<option type="">None of the above</option>
+						</select>
+
+					</div>
+
+					<div data-conv-case="None of the above">
+						<select data-conv-question="Certain factors like <b>stress, gastritis, bright lights, loud noise, alcoholism etc.</b> can worsen headaches.<br><br><br>
+								<b>Are there any such factors that worsen your headaches?</b>" >
+							<option type="">Yes</option>
+							<option type="">No</option>
+							<option type="">Not sure</option>
+						</select>
+
+
+					</div>
+				</div>
+				<input type="text"
+					data-conv-question="Lifestyle issues are some of the common causes that worsens headaches."
+					data-no-answer="true">
+
+				<select data-conv-question="Does any of the following make your headaches worse?">
+					<option value="">Missing your meals</option>
+					<option value="">Certain foods</option>
+					<option value="">Intense exercises</option>
+					<option value="">Prolonged Screen time</option>
+					<option value="">None of the above</option>
+					<option type="">No</option>
+					<option type="">Not sure</option>
+				</select>
+
+
+				<input type="text" data-conv-question="Existing diseases can also worsen headaches" data-no-answer="true">
+
+				<select data-conv-question="<b>Have you observed any of the following worsening your headaches?</b>" multiple>
+					<option value="Coughing">Coughing</option>
+					<option value="Stress">Stress</option>
+					<option value="Recurrent gastritis">Recurrent gastritis</option>
+					<option value="None of the above">None of the above</option>
+				</select>
+				<!-- ERROR -->
+				<input type="text"
+					data-conv-question="External factors are the most common contributing factor for worsening headaches."
+					data-no-answer="true">
+
+				<select data-conv-question="<b>Which of these external factors worsen your headache?</b>" multiple>
+					<option value="Bright/Flickering light">Bright/Flickering light</option>
+					<option value="Weather changes/ Sunlight">Weather changes/ Sunlight</option>
+					<option value="Smells or perfume">Smells or perfume</option>
+					<option value="Loud noise">Loud noise</option>
+					<option value="Travelling/jetlag">Travelling/jetlag</option>
+					<option value="None of the above">None of the above</option>
+				</select>
+
+				<input type="text" data-conv-question="Thank you! 🤗  We are nearing the end of this questionnaire."
+					data-no-answer="true">
+
+				<input type="text"
+					data-conv-question="Just like how certain factors make your headaches worse, it is found that few things can also ease your pain."
+					data-no-answer="true">
+
+				<select data-conv-question="<b>Does any of the following ease your headaches?</b>" 
+					multiple>
+					<option value="Taking rest">Taking rest</option>
+					<option value="Quiet and dark places">Quiet and dark places</option>
+					<option value="Massaging the head">Massaging the head</option>
+					<option value="Exercise">Exercise</option>
+					<option value="None of the above">None of the above</option>
+				</select>
+
+				<input type="text" data-conv-question="That's good to know 🤗" data-no-answer="true">
+				<select data-conv-question="<b>Does anyone in your family have recurring headaches or migraine?</b>">
+					<option value="">Yes</option>
+					<option value="">No</option>
+				</select>
+
+				<input type="text" data-conv-question="And for the last question.." data-no-answer="true">
+				<select data-conv-question="<b>Have you been diagnosed with any of the following?</b>">
+					<option value="">Heart Diseases</option>
+					<option value="">Severe gastritis</option>
+					<option value="">High blood pressure</option>
+					<option value="">Asthma</option>
+					<option value="">None of the above</option>
+				</select>
+
+				<input type="text"
+					data-conv-question="And that's it. You have been immensely patient in answering all my questions.🤗 "
+					data-no-answer="true">
+				<select data-conv-question="Let me collate all your responses and prepare your migraine risk report.
+				Thank you for your time.">
+					<option value="" onclick='thank()'>Submit</option>
+					<script>
+						function thank(e){
+							e.preventDefault();
+							alert('bye');
+						}
+					</script>
+				</select>
+
+
+
+
+
+
+
+
+				<!-- 
+				
+
+
+				<input type="text"
+					data-conv-question="Thank you for letting me know.👍<br> A few more questions to understand how intense your headaches are. "
+					data-no-answer="true">
+
+				<select data-conv-question="<b>On an average, how many headaches do you experience per month?</b>">
+					<option value="">Less than 2</option>
+					<option value="">2-4</option>
+					<option value="">Greater than 4</option>
+				</select>
+
+
+				<input type="text"
+					data-conv-question="Okay...This information is extremely useful in understanding severity of your <br> headaches. Thank you.🙂 "
+					data-no-answer="true">
+				<select data-conv-question="<b>How long does your headaches usually last?</b>">
+
+					<option value="">Less than 6 hours</option>
+					<option value="">Half a day</option>
+					<option value="">Whole day</option>
+					<option value="">For few days</option>
+					<option value="">More than a week</option>
+					<option value="">It varies from time to time</option>
+				</select> 
+
+				<input type="text" data-conv-question="Okay...got it...<br>
+
+		Headaches may affect how we function on a daily basis." data-no-answer="true">
+
+				<select data-conv-question="<b>Does your headache affect your day-to-day life?</b>">
+
+					<option value="">No,it doesn't affect me at all</option>
+					<option value="">Somewhat,but I can still go about my life</option>
+					<option value="">Somewhat,but I take medications</option>
+					<option value="">Severely,but I manage with medications</option>
+					<option value="">Severely.I need rest even with medication</option>
+				</select>
+
+				<input type="text" data-conv-question=" | I understand...|I understand...|">
+
+				<input type="text"
+					data-conv-question="Some people experience associated symptoms (aura) such as <b>vomiting, numbness, seeing colored lights, disturbed sleep, etc.</b> before the headache begins."
+					data-no-answer="true">
+			
+
+				
+				<select data-conv-question="<b>Have you experienced any such symptoms before the headache starts?</b>">
+					<option type="">Vomiting,nausea,diarrhea...etc</option>
+					<option type="">Weakness ,dizziness,numbers...etc.</option>
+					<option type="">Blurry vision ,sensitivity to light...etc.</option>  
+					<option type="">Others</option>
+					<option type="">None of the above</option>
+
+
+					<select data-conv-question="Certain factors like <b>stress, gastritis, bright lights, loud noise, alcoholism etc.</b> can worsen headaches.<br><br><br>
+				    <b>Are there any such factors that worsen your headaches?</b>" data-no-answer="true">
+						<option type="y">Yes</option>
+						<option type="y">No</option>
+						<option type="y">Not sure</option>
+					</select>
+                 
+					    <input type="text" data-conv-question="I want to understand more about this." data-no-answer="true">
+						<select data-conv-question="<b>Do you feel any of the following  before your migraine starts?</b>">
+							<option type="">Numbness / tingling sensation</option>
+							<option type="">Speech difficulty</option>
+							<option type="">Feeling lightheaded</option>
+							<option type="">Weakness of legs </option>
+							<option type="">Weakness of arms</option>
+							<option type="">None of the above</option>
+						</select>
+					
+					
+					<input type="text" data-conv-question="I want to understand more about this." data-no-answer="true">
+					<select data-conv-question="<b>Have you experienced any of these problems?</b>">
+						<option type="">Blurred / double vision</option>
+						<option type="">Sparkling , flashing or colore... </option>
+						<option type="">Puffy/drooping eyelids</option>
+						<option type="">Loss of vision</option>
+						<option type="">None of the above</option>
+					</select>
+					
+					
+					<input type="text" data-conv-question="I want to understand more about this." data-no-answer="true">
+					<select data-conv-question="<b>Do you observe any of the following during your headaches?</b>">
+						<option type="">Runny nose</option>
+						<option type="">Disturbed by light</option>
+						<option type="">Disturbed by noise</option>
+						<option type="">Difficulty concentrating</option>
+						<option type="">Unable to sleep at night</option>
+						<option type="">None of the above</option>
+					</select>
+					   
+                  
+				
+					<select data-conv-question="Certain factors like <b>stress, gastritis, bright lights, loud noise, alcoholism etc.</b> can worsen headaches.<br><br><br>
+			          <b>Are there any such factors that worsen your headaches?</b>" data-no-answer="true">
+						<option type="y">Yes</option>
+						<option type="y">No</option>
+						<option type="y">Not sure</option>
+					</select>
+
+
+
+
+					<select data-conv-question="Certain factors like <b>stress, gastritis, bright lights, loud noise, alcoholism etc.</b> can worsen headaches.<br><br><br>
+			 <b>Are there any such factors that worsen your headaches?</b>" data-no-answer="true">
+						<option type="y/n">Yes</option>
+						<input type="text"
+							data-conv-question="Lifestyle issues are some of the common causes that worsens headaches."
+							data-no-answer="true">
+						<select data-conv-question="Does any of the following make your headaches worse?"></select>
+						<option value="">Missing your meals</option>
+						<option value="">Certain foods</option>
+						<option value="">Intense exercises</option>
+						<option value="">Prolonged Screen time</option>
+						<option value="">None of the above</option>
+						<option type="y/n">No</option>
+						<option type="y/n">Not sure</option>
+					</select>
+				</select>
+
+
+
+
+
+
+
+
+
+				<select data-conv-question="Please Conform">
+					<option value="Yes">Conform</option>
+				</select> -->
+
+			</form>
+		</div>
+	</div>
+</div>
+
+
+	<!-- ChatBot end -->
+
+
+
+
+
+
+
+
+
+	<!-- <header class="header">
+		<div class="container-fluid">
+			<div class="row d-flex justify-content-between">
+				<div class="col-md-auto">
+					<a href="#!" class="logo"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+				</div>
+				<div class="col-md-auto">
+					<nav class="main_nav">
+						<ul>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about">About Us</a></li>
+							<li><a href="#portfolio">Portfolio</a></li>
+							<li><a href="#contact">Contact Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header> -->
+
+	<!-- <div class="banner d-flex align-items-center" style="background-image: url('images/banner.jpg');" id="home">
+		<ul class="socila_links">
+			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+		</ul>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="banner_cont">
+						<h1>John Doe</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="about-section" id="about">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-5 text-justify">
+					<h2 class="bdr-btm">More About John Doe</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<a href="#contact" class="btn1">Contact Us</a>
+				</div>
+				<div class="col-md">
+					<div class="about-box">
+						<h3 class="bdr-btm">Education</h3>
+						<ul>
+							<li><strong>Lorem ipsum dolor</strong> <br> sit amet, consectetur adipisicing</li>
+							<li><strong>Lorem ipsum dolor</strong> <br> sit amet, consectetur adipisicing</li>
+							<li><strong>Lorem ipsum dolor</strong> <br> sit amet, consectetur adipisicing</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="about-box">
+						<h3 class="bdr-btm">Experience</h3>
+						<ul>
+							<li><strong>Lorem ipsum dolor</strong> <br> sit amet, consectetur adipisicing</li>
+							<li><strong>Lorem ipsum dolor</strong> <br> sit amet, consectetur adipisicing</li>
+							<li><strong>Lorem ipsum dolor</strong> <br> sit amet, consectetur adipisicing</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-section" id="portfolio">
+		<div id="port_pop_pic_bg"></div>
+		<div id="port_pop_pic"></div>
+		<div class="container-fluid">
+			<h2 class="text-center bdr-btm bdr-btm-center">Portfolio</h2>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="portfolio-box" style="background-image: url('{% static "images/port1.jpeg" %}');">
+						<h3>Portfolio ipsum dolor</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="portfolio-box" style ="background-image: url('{% static "images/port2.jpeg" %}');">
+						<h3>Portfolio ipsum dolor</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="portfolio-box" style="background-image: url('{% static "images/port3.jpeg" %}');">
+						<h3>Portfolio ipsum dolor</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="portfolio-box" style="background-image: url('{% static "images/port4.jpeg" %}');">
+						<h3>Portfolio ipsum dolor</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="portfolio-box" style="background-image: url('{% static "images/port5.jpeg" %}');">
+						<h3>Portfolio ipsum dolor</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="portfolio-box" style="background-image: url('{% static "images/port6.jpeg" %}');">
+						<h3>Portfolio ipsum dolor</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact-section d-md-flex" id="contact">
+		<div class="col-md-6 col-12 contact_section_left">
+			<div class="contact_box">
+				<i class="fa fa-phone"></i>
+				<h3>Phone</h3>
+				<p>512-421-3940</p>
+			</div>
+			<div class="contact_box">
+				<i class="fa fa-envelope"></i>
+				<h3>Email</h3>
+				<p>support@yourdomain.com</p>
+			</div>
+			<div class="contact_box">
+				<i class="fa fa-map-marker"></i>
+				<h3>Address</h3>
+				<p>1234 Lorem ipsum dolor</p>
+			</div>
+		</div>
+		<div class="col-md-6 col-12 contact_section_right d-flex align-items-center">
+			<div class="contact_box">
+				<h2 class="bdr-btm">Get In Touch</h2>
+				<form>
+					<div>
+						<input type="text" name="" placeholder="Name">
+						<input type="text" name="" placeholder="Email">
+						<input type="text" name="" placeholder="Subject">
+						<textarea placeholder="Message"></textarea>
+						<input type="submit" class="inline-block" name="" value="Send Message">
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div> -->
+
+	<script type="text/javascript">
+		portfolioList = document.querySelectorAll('.portfolio-box');
+		portfolioList.forEach(function (portfolioPic) {
+			portfolioPic.addEventListener('click', function () {
+				bg = this.style.backgroundImage;
+				document.getElementById('port_pop_pic_bg').classList.add("active")
+				document.getElementById('port_pop_pic').style.backgroundImage = bg
+				document.getElementById('port_pop_pic').classList.add("active")
+			});
+		})
+		document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+		})
+	</script>
+
+</body>
+
+</html>
