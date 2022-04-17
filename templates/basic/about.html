@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>About Us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" /
-    {% load static %}
-    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}images/logo.jpg">>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="About_Us.css" />
+    <script
+      src="https://kit.fontawesome.com/dbed6b6114.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
@@ -32,7 +35,7 @@
         justify-content: center;
         grid-template-columns: 0.5fr;
         grid-template-rows: 160px;
-        height: 80vh;
+        height: 70vh;
         width: 85vw;
         margin: 0 auto;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
@@ -46,16 +49,32 @@
         flex-direction: column;
       }
 
+      .info {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 35px;
+      }
+
+      .info p {
+        font-size: 20px;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+
+      .info h1 {
+        justify-content: center;
+        font-size: 34px;
+      }
+
       .description h1 {
         justify-content: center;
+        font-size: 34px;
       }
 
       .description p {
         font-family: "Century Gothic", sans-serif;
         text-align: center;
-      }
-      .description h1 {
-        font-size: 34px;
       }
 
       .content {
@@ -202,10 +221,6 @@
         font-weight: bold;
       }
     </style>
-    <script
-      src="https://kit.fontawesome.com/dbed6b6114.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
@@ -222,8 +237,17 @@
         </p>
       </div>
 
-      <div class="Info"></div>
+      <div class="info" id='sel' style='display: none'>
+        <h1>--- Developers Team ---</h1>
+        <br />
+        <p>
+          Bhargav Bakrania
+          <br />Ayush Dabhi <br />Krutik Dadhaniya <br />Bhargavi Dave
+          <br />Aksh Desai
+        </p>
+      </div>
     </section>
+
     <div class="content">
       <h2>About Us</h2>
       <span>
@@ -235,9 +259,15 @@
         your querries and issues.
       </p>
       <ul class="links">
-        <li><a href="#">Developers Team</a></li>
+        <li onclick='a1()'><a href="#">Developers Team</a></li>
+        <script>
+          function a1(){
+            let sel = document.getElementById('sel')
+            sel.style.display = 'block'
+          }
+        </script>
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
       </ul>
       <ul class="icons">
         <li>
